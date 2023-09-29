@@ -1,0 +1,148 @@
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+:root {
+  --black: #000;
+  --grey: #121212;
+  --light-grey: #232323;
+  --white: #fff;
+}
+body,
+html {
+  height: 100%;
+  margin: 0rem;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+}
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+.container {
+  flex: 1;
+  /* flex-grow : 1;    ➜ The div will grow in same proportion as the window-size       
+flex-shrink : 1;  ➜ The div will shrink in same proportion as the window-size 
+flex-basis : 0;   ➜ The div does not have a starting value as such and will 
+                     take up screen as per the screen size available for
+                     e.g:- if 3 divs are in the wrapper then each div will take 33%. */
+
+  display: flex;
+  overflow: hidden;
+  background-color: var(--black);
+  padding: 0.5rem;
+}
+.sidebar {
+  flex: 0.25;
+  background-color: var(--black);
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.main-container {
+  flex: 0.8;
+  background-color: var(--grey);
+  overflow-y: auto;
+  border-radius: 0.5rem;
+}
+.player {
+  background-color: var(--black);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+.top-icons {
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5 rem;
+}
+.link-flex {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-items: center;
+  opacity: 0.7;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.link-flex:hover {
+  opacity: 1;
+  transition: all 0.3s;
+}
+.link-flex img {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+.link-flex a,
+p {
+  font-size: 1rem;
+  color: var(--white);
+}
+.library {
+  background-color: var(--grey);
+  padding: 1rem 1.5rem;
+  border: 0.5rem;
+  flex: 3;
+  overflow-y: scroll;
+  height: 90vh;
+}
+.library::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+.flex-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.chip {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--light-grey);
+  border-radius: 5rem;
+  width: fit-content;
+  color: var(--white);
+  text-wrap: nowrap;
+}
+.flex-top img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.album-flex {
+  margin-bottom: 1rem !important;
+  opacity: 1;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+}
+.album-flex :hover {
+  background: #1a1a1a;
+
+  transition: all 0.3s;
+}
+.albums {
+  margin-top: 1rem;
+}
+.album-cover {
+  height: 3rem !important;
+  width: 3rem !important;
+  border-radius: 0.2rem;
+}
+.album-name {
+  color: var(--white) !important;
+  margin-bottom: 0.35 rem !important;
+  font-size: 1rem !important;
+}
+.col-flex p {
+  margin: 0;
+  font-weight: normal;
+  font-size: 0.8rem;
+}
