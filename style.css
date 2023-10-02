@@ -46,6 +46,14 @@ flex-basis : 0;   ➜ The div does not have a starting value as such and will
   background-color: var(--grey);
   overflow-y: auto;
   border-radius: 0.5rem;
+  padding: 1rem;
+  padding-bottom: 5rem;
+}
+.container ::-webkit-scrollbar {
+  display: none;
+}
+.main-container ::-webkit-scrollbar {
+  opacity: 0.5;
 }
 .player {
   background-color: var(--black);
@@ -91,13 +99,11 @@ p {
   padding: 1rem 1.5rem;
   border: 0.5rem;
   flex: 3;
-  overflow-y: scroll;
   height: 90vh;
+
+  padding-bottom: 5rem;
 }
-.library::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
-}
+
 .flex-top {
   display: flex;
   justify-content: space-between;
@@ -122,6 +128,7 @@ p {
   opacity: 1;
   padding: 0.5rem 0.5rem;
   border-radius: 0.5rem;
+  max-height: 100%;
 }
 .album-flex :hover {
   background: #1a1a1a;
@@ -130,7 +137,13 @@ p {
 }
 .albums {
   margin-top: 1rem;
+  height: 80vh;
+  overflow-y: auto;
 }
+.albums::-webkit-scrollbar {
+  display: none;
+}
+
 .album-cover {
   height: 3rem !important;
   width: 3rem !important;
@@ -145,4 +158,125 @@ p {
   margin: 0;
   font-weight: normal;
   font-size: 0.8rem;
+}
+.navbar {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  padding: 1rem 0rem;
+  z-index: 1000;
+}
+.cards-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.card {
+  width: 150px;
+  background-color: var(--light-grey);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  height: fit-content;
+  margin: 0rem 0.75rem;
+}
+.card img {
+  width: 100%;
+  border-radius: 0.35rem;
+}
+.card-name {
+  margin: 0.25rem 0;
+}
+.card-description {
+  margin: 0;
+  font-size: 0.8rem;
+}
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  /* height: auto; */
+  height: 65px;
+}
+.volume-controls {
+  width: 20vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.player-center {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.player-controls {
+  display: flex;
+  align-items: center;
+}
+.player-controls img {
+  height: 1rem;
+  margin-right: 1rem;
+  opacity: 0.8;
+}
+.player-timeline {
+  position: absolute;
+  top: 28px;
+}
+.timeline-slider {
+  margin: 0 10px;
+  width: 40vw;
+}
+
+.volume-slider {
+  width: 100px;
+  height: 4px;
+}
+
+.timeline-slider:hover,
+.volume-slider:hover {
+  background-color: #1bd760;
+}
+.timeline-slider,
+.volume-slider {
+  -webkit-appearance: none;
+}
+
+.timeline-slider::-webkit-slider-runnable-track,
+.volume-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #ddd;
+  border: none;
+  border-radius: 100px;
+}
+
+.timeline-slider::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #1bd760;
+  margin-top: -6px;
+}
+
+.timeline-slider:focus,
+.volume-slider:focus {
+  outline: none;
+}
+
+.timeline-slider:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+.volume-controls img {
+  height: 1rem;
+  margin-right: 1rem;
+  opacity: 0.8;
+}
+.last {
+  margin-right: 1rem;
 }
